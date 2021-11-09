@@ -1,5 +1,6 @@
 package com.lesliezhou.matchpoint.auth
 
+import android.app.ActionBar
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -14,7 +15,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.lesliezhou.matchpoint.HomeActivity
-import com.lesliezhou.matchpoint.MainActivity
 import com.lesliezhou.matchpoint.R
 import com.lesliezhou.matchpoint.databinding.LoginFragmentBinding
 

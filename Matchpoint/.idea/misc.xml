@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/matchpoint_icon.xml" value="0.19675925925925927" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/radio_checked.xml" value="0.3402777777777778" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/radio_selector.xml" value="0.3402777777777778" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/radio_unchecked.xml" value="0.3402777777777778" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/round_button.xml" value="0.3402777777777778" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/txt_color.xml" value="0.3402777777777778" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/activity_main.xml" value="0.2694746376811594" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/casual_fragment.xml" value="0.1824074074074074" />
@@ -10,7 +16,8 @@
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/fragment_dashboard.xml" value="0.2554347826086957" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/fragment_home.xml" value="0.2554347826086957" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/login_fragment.xml" value="0.1" />
-        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/profile_fragment.xml" value="0.1824074074074074" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/preference_fragment.xml" value="0.31342592592592594" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/profile_fragment.xml" value="0.5" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/ranked_fragment.xml" value="0.1824074074074074" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/signup_fragment.xml" value="0.2694746376811594" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1824074074074074" />

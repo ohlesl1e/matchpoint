@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.lesliezhou.matchpoint.MainActivity
 import com.lesliezhou.matchpoint.R
@@ -28,6 +29,10 @@ class ProfileFragment : Fragment() {
             auth.signOut()
             //startActivity(Intent(this.activity,MainActivity::class.java))
             this.activity?.finish()
+        }
+
+        binding.preferenceButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_profile_to_preference)
         }
 
         return binding.root
