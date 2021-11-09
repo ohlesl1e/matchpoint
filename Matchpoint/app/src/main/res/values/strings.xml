@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MatchPoint</string>
+    <string name="email">Email:</string>
+    <string name="pass">Password:</string>
+    <string name="login_button">Login</string>
+    <string name="signup_button">Register</string>
+    <string name="has_account">Already have an account? login here.</string>
+    <string name="need_account">Don\'t have an account? register here.</string>
+    <string name="terms_n_conditions">By registering, you agree to out Terms and Conditions</string>
 </resources>
