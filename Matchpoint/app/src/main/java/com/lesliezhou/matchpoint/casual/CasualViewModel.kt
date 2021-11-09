@@ -2,5 +2,6 @@ package com.lesliezhou.matchpoint.casual
 
 import androidx.lifecycle.ViewModel
 
-class CasualViewModel:ViewModel() {
+class CasualViewModel : ViewModel() {
+    // TODO: Implement the ViewModel
 }

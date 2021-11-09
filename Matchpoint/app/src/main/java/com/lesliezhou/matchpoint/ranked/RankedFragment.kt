@@ -1,4 +1,4 @@
-package com.lesliezhou.matchpoint.casual
+package com.lesliezhou.matchpoint.ranked
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import com.lesliezhou.matchpoint.R
 
-class CasualFragment : Fragment() {
+class RankedFragment : Fragment() {
 
     companion object {
-        fun newInstance() = CasualFragment()
+        fun newInstance() = RankedFragment()
     }
 
-    private lateinit var viewModel: CasualViewModel
+    private lateinit var viewModel: RankedViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.casual_fragment, container, false)
+        return inflater.inflate(R.layout.ranked_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(CasualViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(RankedViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

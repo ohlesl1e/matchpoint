@@ -1,5 +1,6 @@
 package com.lesliezhou.matchpoint.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -12,6 +13,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.lesliezhou.matchpoint.HomeActivity
+import com.lesliezhou.matchpoint.MainActivity
 import com.lesliezhou.matchpoint.R
 import com.lesliezhou.matchpoint.databinding.LoginFragmentBinding
 
@@ -56,6 +59,9 @@ class LoginFragment : Fragment() {
                     if (task.isSuccessful) {
                         Log.d("LoginFragment", "signInWithEmail:success")
                         Toast.makeText(context, "Login success", Toast.LENGTH_SHORT).show()
+                        logEmail.setText("")
+                        logPass.setText("")
+                        startActivity(Intent(this.context, HomeActivity::class.java))
                     } else {
                         Log.w("LoginFragment", "signInWithEmail:failure", task.exception)
                         Toast.makeText(
@@ -77,7 +83,7 @@ class LoginFragment : Fragment() {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            //redirect
+            startActivity(Intent(this.context, HomeActivity::class.java))
         }
     }
 

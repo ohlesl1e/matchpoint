@@ -7,4 +7,13 @@
     <string name="has_account">Already have an account? login here.</string>
     <string name="need_account">Don\'t have an account? register here.</string>
     <string name="terms_n_conditions">By registering, you agree to out Terms and Conditions</string>
+    <string name="title_casual">Casual</string>
+    <string name="title_ranked">Ranked</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="logout_button">Logout</string>
 </resources>

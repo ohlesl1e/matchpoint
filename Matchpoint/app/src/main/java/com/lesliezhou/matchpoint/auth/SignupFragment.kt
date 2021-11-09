@@ -46,6 +46,9 @@ class SignupFragment : Fragment() {
         }
 
         binding.signupButton.setOnClickListener { view: View ->
+            Log.i("SignupFragment", "Signup button clicked")
+
+            Toast.makeText(context, "Pleast wait...", Toast.LENGTH_SHORT).show()
             val email = regEmail.text.toString()
             val pass = regEmail.text.toString()
 
@@ -59,11 +62,11 @@ class SignupFragment : Fragment() {
                 regPass.error = "Email cannot be empty"
                 regPass.requestFocus()
             } else {
+                Log.i("SignupFragment", "Signup process start")
                 auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Log.d("SignupFragment", "createUserWithEmail:success")
                         Toast.makeText(context, "Registration success", Toast.LENGTH_SHORT).show()
-
                         view.findNavController().popBackStack()
                     } else {
                         Log.w("SignupFragment", "createUserWithEmail:failure", task.exception)
