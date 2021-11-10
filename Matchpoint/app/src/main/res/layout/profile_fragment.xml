@@ -10,6 +10,8 @@
         android:id="@+id/logoutButton"
         android:layout_width="361dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/logout_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,14 +36,14 @@
         android:gravity=""
         android:src="@drawable/ic_baseline_mode_24"
         android:textSize="18sp"
-        android:tint="#FFFFFF"
         app:icon="@drawable/ic_baseline_mode_24"
         app:layout_constraintBottom_toTopOf="@+id/logoutButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/preferenceButton"
         app:layout_constraintTop_toBottomOf="@+id/profileAvatar"
-        app:layout_constraintVertical_bias=".25" />
+        app:layout_constraintVertical_bias=".25"
+        app:tint="#FFFFFF" />
 
     <ImageButton
         android:id="@+id/preferenceButton"
@@ -51,12 +53,12 @@
         android:src="@drawable/ic_baseline_tune_24"
         android:textAlignment="center"
         android:textSize="18sp"
-        android:tint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/logoutButton"
         app:layout_constraintEnd_toStartOf="@+id/editProfileButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileAvatar"
-        app:layout_constraintVertical_bias=".25" />
+        app:layout_constraintVertical_bias=".25"
+        app:tint="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
