@@ -14,7 +14,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.lesliezhou.matchpoint.HomeActivity
-import com.lesliezhou.matchpoint.MainActivity
 import com.lesliezhou.matchpoint.R
 import com.lesliezhou.matchpoint.databinding.LoginFragmentBinding
 
