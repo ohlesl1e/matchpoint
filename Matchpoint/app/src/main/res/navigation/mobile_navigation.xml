@@ -27,5 +27,15 @@
         android:id="@+id/navigation_profile"
         android:name="com.lesliezhou.matchpoint.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/profile_fragment" />
+        tools:layout="@layout/profile_fragment" >
+        <action
+            android:id="@+id/action_profile_to_preference"
+            app:destination="@id/preferenceFragment"
+            app:popUpTo="@id/navigation_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/preferenceFragment"
+        android:name="com.lesliezhou.matchpoint.profile.PreferenceFragment"
+        android:label="preference_fragment"
+        tools:layout="@layout/preference_fragment" />
 </navigation>
