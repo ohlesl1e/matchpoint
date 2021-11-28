@@ -1,14 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile.editProfileFragment">
+    tools:context=".profile.EditProfileFragment"
+    tools:ignore="SpeakableTextPresentCheck">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/profilePicOne"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/my_shadow"
+                    android:backgroundTint="@color/white"
+                    android:contentDescription="profilePicOne"
+                    android:elevation="10dp"
+                    android:src="@drawable/ic_baseline_sports_tennis_24"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:id="@+id/profilePicTwo"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/my_shadow"
+                    android:backgroundTint="@color/white"
+                    android:contentDescription="profilePicTwo"
+                    android:elevation="10dp"
+                    android:src="@drawable/ic_baseline_sports_tennis_24" />
+
+                <ImageView
+                    android:id="@+id/profilePicThree"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/my_shadow"
+                    android:backgroundTint="@color/white"
+                    android:contentDescription="profilePicThree"
+                    android:elevation="10dp"
+                    android:src="@drawable/ic_baseline_sports_tennis_24" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/profilePicFour"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/my_shadow"
+                    android:backgroundTint="@color/white"
+                    android:contentDescription="profilePicFour"
+                    android:elevation="10dp"
+                    android:src="@drawable/ic_baseline_sports_tennis_24" />
+
+                <ImageView
+                    android:id="@+id/profilePicFive"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/my_shadow"
+                    android:backgroundTint="@color/white"
+                    android:contentDescription="profilePicFive"
+                    android:elevation="10dp"
+                    android:src="@drawable/ic_baseline_sports_tennis_24" />
+
+                <ImageView
+                    android:id="@+id/profilePicSix"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/my_shadow"
+                    android:backgroundTint="@color/white"
+                    android:contentDescription="profilePicSix"
+                    android:elevation="10dp"
+                    android:src="@drawable/ic_baseline_sports_tennis_24" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/nameLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="name"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="16sp"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/genderLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genderLabel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/genderOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:text=""
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/bdayLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/birthdayLabel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+
+        <DatePicker
+            android:id="@+id/bdayPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"/>
+
+        <TextView
+            android:id="@+id/playsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/plays_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/playsOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:text=""
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/aboutLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextAbout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="top"
+                android:inputType="text|textMultiLine"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/availableSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp"
+            android:text="@string/ava_label"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</ScrollView>

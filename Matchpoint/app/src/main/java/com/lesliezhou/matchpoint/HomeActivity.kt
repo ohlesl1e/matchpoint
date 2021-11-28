@@ -2,38 +2,70 @@ package com.lesliezhou.matchpoint
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.location.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.GeoPoint
+import com.lesliezhou.matchpoint.auth.AuthViewModel
 import com.lesliezhou.matchpoint.databinding.ActivityHomeBinding
+import com.lesliezhou.matchpoint.profile.EditProfileFragment
+import com.lesliezhou.matchpoint.profile.ProfileViewModel
+import com.lesliezhou.matchpoint.profile.ProfileViewModelFactory
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var database: FirebaseFirestore
+    private lateinit var sharedPref: SharedPreferences
+    private lateinit var authViewModel: AuthViewModel
+    private lateinit var profileViewModel: ProfileViewModel
+    private lateinit var profileViewModelFactory: ProfileViewModelFactory
+
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var locationRequest: LocationRequest
 
     private var PERMISSION_ID = 42069
+    @RequiresApi(Build.VERSION_CODES.O)
+    val selectPictureLauncher = registerForActivityResult(ActivityResultContracts.GetContent()){
+        profileViewModel.uploadImage(it)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        authViewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
+        profileViewModelFactory = ProfileViewModelFactory(this)
+        profileViewModel = ViewModelProvider(this,profileViewModelFactory).get(ProfileViewModel::class.java)
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedPref = getSharedPreferences(
+            R.string.pref_key.toString(),
+            Context.MODE_PRIVATE
+        )!!
+        database = FirebaseFirestore.getInstance()
 
         val navView: BottomNavigationView = binding.navView
 
@@ -52,20 +84,20 @@ class HomeActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-    }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val intent = Intent(Intent.ACTION_MAIN)
-        intent.addCategory(Intent.CATEGORY_HOME)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)
-        finishActivity(0)
     }
 
     override fun onStart() {
         super.onStart()
-        getLastLocation()
+        GlobalScope.launch {
+            getLastLocation()
+            authViewModel.setProfile(sharedPref,this@HomeActivity)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.nav_host_fragment_activity_home)
+        return navController.navigateUp()
     }
 
     private fun checkPermission(): Boolean {
@@ -117,8 +149,8 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun getLastLocation() {
-        Log.i("HomeActivity", "Get Location")
+    internal fun getLastLocation() {
+        Log.i("HomeActivity", "Get last Location")
         if (checkPermission()) {
             if (isLocationEnabled()) {
                 fusedLocationClient.lastLocation.addOnCompleteListener { task ->
@@ -128,11 +160,7 @@ class HomeActivity : AppCompatActivity() {
                             "HomeActivity",
                             "CurrentLocation: ${location.latitude}, ${location.longitude}"
                         )
-                        Toast.makeText(
-                            this,
-                            "CurrentLocation: ${location.latitude}, ${location.longitude}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        authViewModel.updateLocation(location,this)
                     } else {
                         getNewLocation()
                     }
@@ -163,16 +191,12 @@ class HomeActivity : AppCompatActivity() {
 
     private val locationCallback = object : LocationCallback() {
         override fun onLocationResult(p0: LocationResult) {
-            var lastLocation: Location = p0.lastLocation
+            val lastLocation: Location = p0.lastLocation
             Log.i(
                 "HomeActivity",
                 "CurrentLocation: ${lastLocation.latitude}, ${lastLocation.longitude}"
             )
-            Toast.makeText(
-                baseContext,
-                "CurrentLocation: ${lastLocation.latitude}, ${lastLocation.longitude}",
-                Toast.LENGTH_SHORT
-            ).show()
+            authViewModel.updateLocation(lastLocation, this@HomeActivity)
         }
     }
 }

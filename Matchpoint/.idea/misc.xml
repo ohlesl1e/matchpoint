@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../Matchpoint/app/src/main/res/layout/preference_fragment.xml" value="0.18028545901314655" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/gradient.xml" value="0.3402777777777778" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/matchpoint_icon.xml" value="0.19675925925925927" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/my_shadow.xml" value="0.3402777777777778" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/radio_checked.xml" value="0.3402777777777778" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/radio_selector.xml" value="0.3402777777777778" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/radio_unchecked.xml" value="0.3402777777777778" />
@@ -11,21 +14,27 @@
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/drawable/txt_color.xml" value="0.3402777777777778" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/activity_main.xml" value="0.2694746376811594" />
-        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/casual_fragment.xml" value="0.1824074074074074" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/casual_fragment.xml" value="0.33" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/chat_fragment.xml" value="0.1824074074074074" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/edit_profile_fragment.xml" value="0.32592592592592595" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/fragment_dashboard.xml" value="0.2554347826086957" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/fragment_home.xml" value="0.2554347826086957" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/login_fragment.xml" value="0.1" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/plays_drop_down.xml" value="0.32592592592592595" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/preference_fragment.xml" value="0.31342592592592594" />
-        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/profile_fragment.xml" value="0.5" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/profile_card.xml" value="0.32592592592592595" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/profile_fragment.xml" value="0.33" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/ranked_fragment.xml" value="0.1824074074074074" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/layout/signup_fragment.xml" value="0.2694746376811594" />
         <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1824074074074074" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/menu/edit_menu.xml" value="0.18333333333333332" />
+        <entry key="..\:/Documents/GitHub/matchpoint/Matchpoint/app/src/main/res/xml/image_share_filepaths.xml" value="0.18009259259259258" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20606884057971014" />
         <entry key="app/src/main/res/layout/login_fragment.xml" value="0.20606884057971014" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

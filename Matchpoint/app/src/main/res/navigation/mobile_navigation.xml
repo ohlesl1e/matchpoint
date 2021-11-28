@@ -31,6 +31,18 @@
         <action
             android:id="@+id/action_profile_to_preference"
             app:destination="@id/preferenceFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:popUpTo="@id/navigation_profile" />
+        <action
+            android:id="@+id/action_profile_to_editProfile"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
             app:popUpTo="@id/navigation_profile" />
     </fragment>
     <fragment
@@ -38,4 +50,9 @@
         android:name="com.lesliezhou.matchpoint.profile.PreferenceFragment"
         android:label="preference_fragment"
         tools:layout="@layout/preference_fragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.lesliezhou.matchpoint.profile.EditProfileFragment"
+        android:label="edit_profile_fragment"
+        tools:layout="@layout/edit_profile_fragment" />
 </navigation>
